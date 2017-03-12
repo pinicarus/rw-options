@@ -1,0 +1,46 @@
+{
+	"name":        "rw-options",
+	"version":     "1.0.0",
+	"description": "A ravenwood middleware to handle OPTIONS requests",
+	"author":      "Pierre-Nicolas Clauss",
+	"license":     "WTFPL",
+	"homepage":    "https://github.com/pinicarus/rw-options#readme",
+
+	"keywords": [],
+
+	"repository": {
+		"type": "git",
+		"url":  "git+https://github.com/pinicarus/rw-options.git"
+	},
+
+	"bugs": {
+		"url": "https://github.com/pinicarus/rw-options/issues"
+	},
+
+	"scripts": {
+		"doc":         "jsdoc2md --heading-depth 1 --files src/**.js > API.md",
+		"lint":        "eslint . --ignore-path .gitignore",
+		"unittest":    "mocha --opts ./.mocha.opts",
+		"unitcov":     "istanbul cover -- _mocha --opts ./.mocha.opts",
+		"postunitcov": "istanbul check-coverage",
+		"pretest":     "npm run lint",
+		"test":        "npm run unitcov",
+		"posttest":    "cat coverage/lcov.info | coveralls || true"
+	},
+
+	"dependencies": {
+		"ravenwood": "1.0.0"
+	},
+
+	"devDependencies": {
+		"coveralls":         "2.12.0",
+		"eslint":            "3.17.0",
+		"istanbul":          "0.4.5",
+		"jsdoc-to-markdown": "3.0.0",
+		"mocha":             "3.2.0"
+	},
+
+	"peerDependencies": {
+		"ravenwood": "1.x"
+	}
+}
